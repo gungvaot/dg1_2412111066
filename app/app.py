@@ -27,6 +27,28 @@ def index():
     return render_template("index.html", title=title, students=load_students())
 
 
+@app.route("/api/health")
+def health():
+    return jsonify({"status": "ok", "student": MSSV})
+
+
+@app.route("/api/students")
+def list_students():
+    students = load_students()
+    lop = request.args.get("lop")
+    if lop:
+        students = [s for s in students if s["lop"].lower() == lop.lower()]
+    return jsonify(students)
+
+
+@app.route("/api/students/<int:student_id>")
+def get_student(student_id):
+    for s in load_students():
+        if s["id"] == student_id:
+            return jsonify(s)
+    return jsonify({"error": "Student not found"}), 404
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
