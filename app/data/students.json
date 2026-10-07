@@ -1,0 +1,7 @@
+[
+{"id": 1, "mssv": "22123456", "ho_ten": "Nguyen Van An",   "lop": "CNTT1", "diem": 8.5},
+  {"id": 2, "mssv": "22123457", "ho_ten": "Tran Thi Binh",   "lop": "CNTT1", "diem": 7.0},
+  {"id": 3, "mssv": "22123458", "ho_ten": "Le Van Cuong",    "lop": "CNTT2", "diem": 9.0},
+  {"id": 4, "mssv": "22123459", "ho_ten": "Pham Thi Dung",   "lop": "CNTT2", "diem": 6.5},
+  {"id": 5, "mssv": "22123460", "ho_ten": "Hoang Van Em",    "lop": "KHMT1", "diem": 8.0}
+]
