@@ -49,6 +49,34 @@ def get_student(student_id):
     return jsonify({"error": "Student not found"}), 404
 
 
+@app.route("/api/students", methods=["POST"])
+def create_student():
+    data = request.get_json(silent=True)
+    required = ["mssv", "ho_ten", "lop", "diem"]
+    if not isinstance(data, dict) or any(k not in data for k in required):
+        return jsonify({"error": "Missing required fields"}), 400
+
+    try:
+        diem = float(data["diem"])
+    except (TypeError, ValueError):
+        return jsonify({"error": "diem must be a number"}), 400
+    if not 0 <= diem <= 10:
+        return jsonify({"error": "diem must be between 0 and 10"}), 400
+
+    students = load_students()
+    new_id = max((s["id"] for s in students), default=0) + 1
+    student = {
+        "id": new_id,
+        "mssv": str(data["mssv"]),
+        "ho_ten": str(data["ho_ten"]),
+        "lop": str(data["lop"]),
+        "diem": diem,
+    }
+    students.append(student)
+    save_students(students)
+    return jsonify(student), 201
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
