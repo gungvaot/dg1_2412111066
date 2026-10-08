@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>{{ title }}</h1>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>MSSV</th><th>Họ tên</th><th>Lớp</th><th>Điểm</th></tr>
+    </thead>
+    <tbody>
+      {% for s in students %}
+      <tr>
+        <td>{{ s.id }}</td><td>{{ s.mssv }}</td><td>{{ s.ho_ten }}</td>
+        <td>{{ s.lop }}</td><td>{{ s.diem }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

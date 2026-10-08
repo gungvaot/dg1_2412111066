@@ -1,0 +1,116 @@
+=== 1. Health ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100     39 100     39   0      0  16919      0                              0100     39 100     39   0      0  15537      0                              0100     39 100     39   0      0  14994      0                              0
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.9 Python/3.14.4
+Date: Wed, 07 Oct 2026 15:01:06 GMT
+Content-Type: application/json
+Content-Length: 39
+Connection: close
+
+{"status":"ok","student":"2412111066"}
+
+=== 2. Danh sach sinh vien ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100    385 100    385   0      0 147.9k      0                              0100    385 100    385   0      0 139.7k      0                              0100    385 100    385   0      0 133.9k      0                              0
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.9 Python/3.14.4
+Date: Wed, 07 Oct 2026 15:01:06 GMT
+Content-Type: application/json
+Content-Length: 385
+Connection: close
+
+[{"diem":8.5,"ho_ten":"Nguyen Van An","id":1,"lop":"CNTT1","mssv":"22123456"},{"diem":7.0,"ho_ten":"Tran Thi Binh","id":2,"lop":"CNTT1","mssv":"22123457"},{"diem":9.0,"ho_ten":"Le Van Cuong","id":3,"lop":"CNTT2","mssv":"22123458"},{"diem":6.5,"ho_ten":"Pham Thi Dung","id":4,"lop":"CNTT2","mssv":"22123459"},{"diem":8.0,"ho_ten":"Hoang Van Em","id":5,"lop":"KHMT1","mssv":"22123460"}]
+
+=== 3. Loc theo lop CNTT1 ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100    156 100    156   0      0  80205      0                              0100    156 100    156   0      0  73205      0                              0100    156 100    156   0      0  69549      0                              0
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.9 Python/3.14.4
+Date: Wed, 07 Oct 2026 15:01:06 GMT
+Content-Type: application/json
+Content-Length: 156
+Connection: close
+
+[{"diem":8.5,"ho_ten":"Nguyen Van An","id":1,"lop":"CNTT1","mssv":"22123456"},{"diem":7.0,"ho_ten":"Tran Thi Binh","id":2,"lop":"CNTT1","mssv":"22123457"}]
+
+=== 4. Lay sinh vien id=1 ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100     77 100     77   0      0  33890      0                              0100     77 100     77   0      0  32096      0                              0100     77 100     77   0      0  30936      0                              0
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.9 Python/3.14.4
+Date: Wed, 07 Oct 2026 15:01:06 GMT
+Content-Type: application/json
+Content-Length: 77
+Connection: close
+
+{"diem":8.5,"ho_ten":"Nguyen Van An","id":1,"lop":"CNTT1","mssv":"22123456"}
+
+=== 5. Sinh vien khong ton tai (404) ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100     30 100     30   0      0  12048      0                              0100     30 100     30   0      0  10355      0                              0100     30 100     30   0      0  10026      0                              0
+HTTP/1.1 404 NOT FOUND
+Server: Werkzeug/3.1.9 Python/3.14.4
+Date: Wed, 07 Oct 2026 15:01:06 GMT
+Content-Type: application/json
+Content-Length: 30
+Connection: close
+
+{"error":"Student not found"}
+
+=== 6. POST thieu truong (400) ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100     79 100     36 100     43  17200  20544                              0100     79 100     36 100     43  15803  18876                              0100     79 100     36 100     43  14802  17680                              0
+HTTP/1.1 400 BAD REQUEST
+Server: Werkzeug/3.1.9 Python/3.14.4
+Date: Wed, 07 Oct 2026 15:01:06 GMT
+Content-Type: application/json
+Content-Length: 36
+Connection: close
+
+{"error":"Missing required fields"}
+
+=== 7. POST diem ngoai khoang (400) ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100    105 100     42 100     63  19082  28623                              0100    105 100     42 100     63  17857  26785                              0100    105 100     42 100     63  17184  25777                              0
+HTTP/1.1 400 BAD REQUEST
+Server: Werkzeug/3.1.9 Python/3.14.4
+Date: Wed, 07 Oct 2026 15:01:06 GMT
+Content-Type: application/json
+Content-Length: 42
+Connection: close
+
+{"error":"diem must be between 0 and 10"}
+
+=== 8. POST hop le (201) ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100    140 100     74 100     66  32076  28608                              0100    140 100     74 100     66  30603  27295                              0100    140 100     74 100     66  28276  25219                              0
+HTTP/1.1 201 CREATED
+Server: Werkzeug/3.1.9 Python/3.14.4
+Date: Wed, 07 Oct 2026 15:01:06 GMT
+Content-Type: application/json
+Content-Length: 74
+Connection: close
+
+{"diem":9.5,"ho_ten":"Vu Thi Hoa","id":6,"lop":"CNTT1","mssv":"22123461"}
+
+=== 9. Kiem tra lai danh sach ===
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0100    459 100    459   0      0 211.7k      0                              0100    459 100    459   0      0 197.7k      0                              0100    459 100    459   0      0 188.7k      0                              0
+HTTP/1.1 200 OK
+Server: Werkzeug/3.1.9 Python/3.14.4
+Date: Wed, 07 Oct 2026 15:01:06 GMT
+Content-Type: application/json
+Content-Length: 459
+Connection: close
+
+[{"diem":8.5,"ho_ten":"Nguyen Van An","id":1,"lop":"CNTT1","mssv":"22123456"},{"diem":7.0,"ho_ten":"Tran Thi Binh","id":2,"lop":"CNTT1","mssv":"22123457"},{"diem":9.0,"ho_ten":"Le Van Cuong","id":3,"lop":"CNTT2","mssv":"22123458"},{"diem":6.5,"ho_ten":"Pham Thi Dung","id":4,"lop":"CNTT2","mssv":"22123459"},{"diem":8.0,"ho_ten":"Hoang Van Em","id":5,"lop":"KHMT1","mssv":"22123460"},{"diem":9.5,"ho_ten":"Vu Thi Hoa","id":6,"lop":"CNTT1","mssv":"22123461"}]
