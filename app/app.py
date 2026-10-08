@@ -9,7 +9,7 @@ MSSV = "2412111066"
 HO_TEN = "Ngo Xuan Loc"      # <-- sua thanh ho ten that
 
 app = Flask(__name__, static_folder="static", template_folder="templates")
-
+//yaboi
 
 def load_students():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
